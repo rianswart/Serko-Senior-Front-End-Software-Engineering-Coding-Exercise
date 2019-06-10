@@ -7,6 +7,7 @@ import fromPairs from 'ramda/src/fromPairs';
 import { Formik, Field, Form } from 'formik';
 import { TextField } from 'formik-material-ui';
 import { makeStyles } from '@material-ui/core/styles';
+import grey from '@material-ui/core/colors/grey';
 import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Container from '@material-ui/core/Container';
@@ -19,6 +20,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 
+import Header from './Header';
+
 import * as actionTypes from '../actionTypes';
 import * as selectors from '../selectors';
 
@@ -29,13 +32,14 @@ const useStyles = makeStyles(theme => ({
     },
   },
   paper: {
-    padding: theme.spacing(4),
+    padding: theme.spacing(3, 4, 4, 4),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
   },
   poweredBy: {
     marginTop: theme.spacing(2),
+    color: grey[800],
   },
   logo: {
     width: '50px',
@@ -46,7 +50,7 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(3),
   },
   submit: {
-    margin: theme.spacing(3, 0, 2),
+    margin: theme.spacing(3, 0, 0),
   },
   formControl: {
     minWidth: '100%',
@@ -55,9 +59,6 @@ const useStyles = makeStyles(theme => ({
     position: 'absolute',
     left: '50%',
     top: '50%',
-    [theme.breakpoints.up('sm')]: {
-      top: '40%',
-    },
     transform: 'translate(-50%, -50%)',
   },
   menuSpinnerContainer: {
@@ -102,10 +103,7 @@ const SignUp = ({
     <Container component="main" maxWidth="xs" className={classes.container}>
       <CssBaseline />
       <Paper className={classes.paper}>
-        <img src="serko_logo.png" alt="Serko logo" className={classes.logo} />
-        <Typography variant="body2">
-          Sign up with Serko
-        </Typography>
+        <Header subtitle="Sign up with Serko" />
         <Formik
           initialValues={{
             email: '',
