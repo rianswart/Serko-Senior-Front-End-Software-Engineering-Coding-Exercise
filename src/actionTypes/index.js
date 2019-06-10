@@ -1,0 +1,8 @@
+export const ADD_SERVER_ERRORS = 'ADD_SERVER_ERRORS';
+export const GET_LANGUAGES_ASYNC = 'GET_LANGUAGES_ASYNC';
+export const SIGNING_UP = 'SIGNING_UP';
+export const NOTIFICATION = 'NOTIFICATION';
+export const SIGN_UP = 'SIGN_UP';
+export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
+export const SIGN_UP_FAILURE = 'SIGN_UP_FAILURE';
+export const IS_SUBMITTING = 'IS_SUBMITTING';
